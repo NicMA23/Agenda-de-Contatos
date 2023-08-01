@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="responsivity.css">
+    <title>Agenda de Contatos</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <form id="form">
+                <div class="in-er-name">
+                    <input id="nome-completo" type="text" required placeholder="Nome Completo">
+                    <p id="error-name">Nome Completo</p>
+                </div>
+                <div class="in-er-num">
+                    <input id="telefone" required placeholder="Telefone 10 Dígitos" type="tel" maxlength="10"
+                        minlength="10">
+                    <p id="error-num">Digite Somente Números</p>
+                </div>
+                <div class="btn">
+                    <button type="submit">+ Novo</button>
+                </div>
+            </form>
+        </header>
+        <main>
+            <table cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            Nome
+                        </th>
+                        <th>
+                            Telefone
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    <tr>
+                        <td>
+                            ---
+                        </td>
+                        <td>
+                            ---
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

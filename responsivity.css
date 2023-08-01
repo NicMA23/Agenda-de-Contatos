@@ -1,0 +1,28 @@
+@media screen and (max-width: 415px) {
+    form {
+        display: block;
+        align-items: center;
+        justify-content: center;
+    }
+
+    input {
+        padding: 8px;
+        margin: 4px;
+    }
+
+    .btn {
+        display: flex;
+        justify-content: center;
+    }
+
+    button {
+        margin-top: 16px;
+        padding: 8px;
+        width: 100%;
+    }
+
+    td {
+        width: 50%;
+        flex-wrap: wrap;
+    }
+}
