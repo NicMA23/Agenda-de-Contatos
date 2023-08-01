@@ -29,4 +29,8 @@
     .container {
         width: 95%;
     }
+
+    #pdf-btn {
+        width: 50%;
+    }
 }

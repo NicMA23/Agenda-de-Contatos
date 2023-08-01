@@ -4,11 +4,13 @@ const errorName = document.getElementById('error-name')
 const tel = document.getElementById('telefone')
 const errorNum = document.getElementById('error-num')
 const trashBin = document.querySelector('.trash-bin')
+const salvar = document.getElementById('pdf-btn')
 let linhas = []
+let i
 
 function verifyName(nome) {
-    const nomeArray = nome.split(' ')
-    return nomeArray.length > 1
+    const nomeArray = nome.trim().split(' ');
+    return nomeArray.length >= 2;
 }
 
 function Nan(nome) {
@@ -100,12 +102,32 @@ form.addEventListener('submit', function (e) {
 
 document.addEventListener('click', function (e) {
     if (e.target.classList.contains('material-symbols-outlined')) {
-        const row = e.target.closest('tr')
-        const linhaValor = linhas.indexOf(row.outerHTML)
-        if (linhaValor !== -1) {
-            linhas.splice(linhaValor, 1)
-            const body = document.getElementById('tbody')
-            body.innerHTML = linhas.join('')
+        const row = e.target.closest('tr');
+        if (row) {
+            const linhaValor = linhas.indexOf(row.outerHTML)
+            if (linhaValor !== -1) {
+                linhas.splice(linhaValor, 1)
+                const body = document.getElementById('tbody')
+                body.innerHTML = linhas.join('')
+            }
         }
     }
+})
+
+
+salvar.addEventListener('click', function (e) {
+
+    const tabela = document.getElementById('tabela')
+    const conteudoTabela = tabela.outerHTML
+
+    const options = {
+        margin: [10, 10, 10, 10],
+        filename: 'agenda_de_contatos.pdf',
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    }
+
+
+    html2pdf().set(options).from(conteudoTabela).save()
+
 })
