@@ -25,4 +25,8 @@
         width: 50%;
         flex-wrap: wrap;
     }
+
+    .container {
+        width: 95%;
+    }
 }
